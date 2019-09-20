@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/seunbayo/goldhng-task#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.6.0",
     "bcryptjs": "^2.4.3",
     "debug": "^4.1.1",
     "dotenv": "^8.1.0",

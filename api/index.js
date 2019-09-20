@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import Debug from 'debug';
 import dotenv from 'dotenv';
 import express from 'express';
