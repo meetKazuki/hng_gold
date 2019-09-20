@@ -6,11 +6,12 @@
   "scripts": {
     "build-babel": "babel -d ./build ./api -s",
     "build": "npm run clean && npm run build-babel",
+    "clean": "rm -rf .nyc_output build coverage && mkdir build",
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo": "sequelize db:migrate:undo:all",
     "db:seed": "sequelize db:seed:all",
     "db:reset": "npm run db:migrate:undo && npm run db:migrate",
-    "postinstall": "npm run build && npm run migrate",
+    "postinstall": "npm run build && npm run db:migrate",
     "start": "node ./build/index.js",
     "start:dev": "set DEBUG=dev && nodemon --exec babel-node api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -51,5 +52,9 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "nodemon": "^1.19.2"
+  },
+  "engines": {
+    "node": "12.9.0",
+    "npm": "6.10.2"
   }
 }
